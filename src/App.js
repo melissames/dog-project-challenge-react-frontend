@@ -1,21 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect }  from 'react-redux';
+import { fetchAllDogs } from './actions/index.js';
+import { bindActionCreators } from 'redux'
+import DogContainer from './components/DogContainer.js'
 
 class App extends Component {
+
+  componentDidMount () {
+    this.props.fetchAllDogs()
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        {this.props.loading ? <DogContainer /> : null}
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    loading: state.loading
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchAllDogs: bindActionCreators(fetchAllDogs, dispatch)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
