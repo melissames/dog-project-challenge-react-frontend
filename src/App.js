@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect }  from 'react-redux';
 import { fetchAllDogs } from './actions/index.js';
-import { bindActionCreators } from 'redux'
-import DogContainer from './components/DogContainer.js'
+import { bindActionCreators } from 'redux';
+import DogContainer from './components/DogContainer.js';
+import styles from './App.css';
 
 class App extends Component {
 
@@ -12,7 +13,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="App">
         {this.props.loading ? <DogContainer /> : null}
       </div>
     );
@@ -21,7 +22,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    loading: state.loading
+    loading: state.allDogsLoading
   }
 }
 

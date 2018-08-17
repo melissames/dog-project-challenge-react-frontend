@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect }  from 'react-redux';
-import DogList from './DogList.js'
-import DogDetail from './DogDetail.js'
+import DogList from './DogList.js';
+import DogDetail from './DogDetail.js';
+
 
 class DogContainer extends Component {
 
@@ -10,11 +11,10 @@ class DogContainer extends Component {
   }
 
   render() {
-    console.log('hello from dog container', this.props.allDogs)
     return(
       <div>
-        <h1>Dog Profile Demo</h1>
-        {/* {this.renderDoggos()} */}
+        <h1><a href='http://localhost:3001/'>Dog Profile Demo</a></h1>
+        {this.props.dog ? (this.props.loading ? <DogDetail /> : null) : this.renderDoggos()}
       </div>
     )
   }
@@ -22,7 +22,9 @@ class DogContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    allDogs: state.allDogs
+    allDogs: state.allDogs,
+    dog: state.dog,
+    loading: state.dogLoading
   }
 }
 
