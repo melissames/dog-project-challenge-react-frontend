@@ -3,7 +3,7 @@ import { connect }  from 'react-redux';
 import { fetchAllDogs } from './actions/index.js';
 import { bindActionCreators } from 'redux';
 import DogContainer from './components/DogContainer.js';
-import styles from './App.css';
+import styles from './App.css'
 
 class App extends Component {
 

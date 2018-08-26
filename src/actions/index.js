@@ -15,3 +15,17 @@ export let fetchDog = id => {
       .then(json => dispatch({type: 'FETCH_DOG', payload: json}))
   }
 }
+
+export let editDogForm = () => {
+  return dispatch => {
+    dispatch({type: 'EDIT_DOG_FORM', payload: null})
+  }
+}
+
+// export let editDog = id => {
+//   return dispatch => {
+//     return fetch(`${URL}/dogs/${id}`{
+//       method: 'POST',
+//     })
+//   }
+// }

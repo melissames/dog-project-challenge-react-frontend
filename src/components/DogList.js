@@ -16,7 +16,7 @@ class DogList extends Component {
     return(
       <div onClick={this.handleClick}>
           <h2><a href='#'>{this.props.dog.name}</a></h2>
-          <img src={`${URL}/${this.props.dog.images[0]}`} alt=''></img>
+          <img src={`${URL}/${this.props.dog.images[0]}`} alt=''/>
       </div>
     )
   }
