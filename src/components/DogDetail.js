@@ -37,9 +37,9 @@ class DogDetail extends Component {
           </Slider>
         : <img src={`${URL}${this.props.dog.images[0]}`} alt=''/>}
         <p>{this.props.dog.description}</p>
-          <button onClick={this.handleEditClick}>Edit {this.props.dog.name}'s Profile</button>
-          <br/>
-          <button onClick={this.handleDeleteClick}>Delete {this.props.dog.name}'s Profile</button>
+        <button onClick={this.handleEditClick}>Edit {this.props.dog.name}'s Profile</button>
+        <br/>
+        <button onClick={this.handleDeleteClick}>Delete {this.props.dog.name}'s Profile</button>
       </div>
     )
   }

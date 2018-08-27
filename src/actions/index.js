@@ -22,10 +22,17 @@ export let editDogForm = () => {
   }
 }
 
-// export let editDog = id => {
-//   return dispatch => {
-//     return fetch(`${URL}/dogs/${id}`{
-//       method: 'POST',
-//     })
-//   }
-// }
+export let editDog = (id, name, description, photo) => {
+  return dispatch => {
+    return fetch(`${URL}/dogs/${id}`, {
+      method: 'POST',
+      data: {
+        name: name,
+        description: description,
+        photo: photo
+      }
+    })
+    .then(res => res.json)
+    .then(console.log)
+  }
+}

@@ -13,7 +13,7 @@ export default function rootReducer(state = defaultState, action){
     case 'FETCH_DOG':
       return {...state, dogLoading: true, dog: action.payload}
     case 'EDIT_DOG_FORM':
-      return {...state, editDog: true}
+      return {...state, editDog: true}  
     default:
       return state;
   }
